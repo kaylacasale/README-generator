@@ -34,7 +34,7 @@ inquirer
         const contentREADME = generateREADME(answers);
 
         fs.writeFile('README.md', contentREADME, (err) =>
-            err ? console.log(err) : console.log('Successfully created README.md file!'))
+            err ? console.log(err) : console.log('Successfully created README.md file!')) //title text = underined
     })
 
 // TODO: Create a function to write README file
