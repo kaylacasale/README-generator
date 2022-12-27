@@ -4,9 +4,14 @@ const inquirer = require('inquirer');
 
 const generateMarkdown = require('./utils/generateMarkdown');
 
+console.log(generateMarkdown)
 
 //* generate list items for table of contents
 //* see if you could do choices/options for tableofContents
+//* answers is the object that holds all the answers to the input questions
+//* destructured object 'answers' so I could just refer to each answer by name (e.g. tableOfContents, title, etc.)
+
+//* LICENSE: create a template
 // TODO: Create an array of questions for user input
 const generateREADME = (answers) = ({ tableOfContents, title, description, installation, usage, license, contributing, tests, questions }) =>
     `
@@ -14,7 +19,8 @@ const generateREADME = (answers) = ({ tableOfContents, title, description, insta
     # Title: ${title}
     ## Description: ${description}
     ## Installation: ${installation}
-    ## Usage: ${usage}`
+    ## Usage: ${usage}
+    ## License: ${license}`
 
 
 //* inquirer.prompt takea an array of objects where each object is a question
@@ -61,12 +67,24 @@ inquirer
             message: 'Describe how your application is used (e.g. directions).',
             name: 'usage',
         },
+        {
+            type: 'list',
+            message: 'Choose a license for your application.',
+            choices: ['Apache_2.0', 'Boost_1.0', 'BSD_3--Clause', 'BSD_2--Clause'],
+            name: 'license',
+        },
+
 
 
     ])
     //* answers will have a name property equal to whatever the user inputs
     .then((answers) => {
         const contentREADME = generateREADME(answers);
+        // generateMarkdown.renderLicenseBadge(answers.license)
+        generateMarkdown.renderLicenseBadge(answers.license)
+        console.log(generateMarkdown.renderLicenseBadge)
+
+
 
         // const fileName = `${answers.name.toLowerCase().split(' ').join('')}.json`;
 
@@ -100,23 +118,25 @@ inquirer
 
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, answers) {
-    const data = inquirer.prompt(answers)
-    console.log(data)
-    fs.writeFile(answers, data, err =>
-        err ? console.log(err) : console.log('Sucessfully writing file...')
-    )
+// function writeToFile(fileName, answers) {
+//     //const answers = inquirer.prompt(answers)
+//     console.log(data)
+
+//     fs.writeToFile(answers, data, err =>
+//         err ? console.log(err) : console.log('Sucessfully writing file...')
+//     )
 
 
 
 
-    fs.writeFile(fileName, data, err =>
-        err ? console.log(err) : console.log('Sucessfully writing file...'))
-    console.log(data)
-    return data
-}
-
-//const writeFileAsync = util.promisify(writeToFile);
+//     fs.writeFile(fileName, data, err =>
+//         err ? console.log(err) : console.log('Sucessfully writing file...'))
+//     console.log(data)
+//     const markdown = generateMarkdown(answers)
+//     // return data
+// }
+// //const write = generateMarkdown(writeToFile)
+// const writeFileAsync = generateMarkdown.promisify(writeToFile);
 
 
 
