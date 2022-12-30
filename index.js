@@ -18,9 +18,9 @@ const generateMarkdown = require('./utils/generateMarkdown');
 
 
 // TODO: Create an array of questions for user input
-const generateREADME = (answers) = ({ tableOfContents, title, description, installation, usage, license, badges, contributing, tests, questions }) =>
+const generateREADME = (answers) = ({ tOc, title, description, installation, usage, license, badges, contributing, tests, questions }) =>
     `
-    ## Table of Contents: ${tableOfContents}
+    ## Table of Contents: ${tOc}
 
     # Title: ${title}
 
@@ -109,9 +109,33 @@ inquirer
 
     //* answers will have a name property equal to whatever the user inputs
     .then((answers) => {
+        console.log(answers.sections)
+        //const contents = answers.sections
+        //generateMarkdown.renderTableOfContents(contents)
+        const tOc = generateMarkdown.renderTableOfContents(answers.sections)
+
         const badges = generateMarkdown.renderLicenseBadge(answers.license)
         let contentREADME = generateREADME(answers);
-        contentREADME += badges;
+
+        const title = generateMarkdown.renderTitle(answers.title)
+        // if (answers.title !== '') {
+        //     contentREADME += `
+
+        //     ## ${answers.title}`
+        // }
+
+        contentREADME += `#` + title;
+        contentREADME += tOc;
+        // contentREADME += '\n' + badges;
+        // contentREADME += `\n## License` + badges
+        contentREADME += `
+        \n` + '##License' + badges
+        // contentREADME += `
+
+        // ## Badge
+        // ` + badges
+        //contentREADME += `${generateMarkdown.badge}`
+
         //console.log(answers.color)
 
         // if (answers.license == 'Apache_2.0') {
@@ -122,14 +146,16 @@ inquirer
 
 
 
-
+        generateMarkdown.renderTableOfContents(answers.sections);
 
         // generateMarkdown.renderLicenseBadge(answers.license)
         generateMarkdown.renderLicenseBadge(answers.license)
-        console.log(generateMarkdown.renderLicenseBadge)
-        console.log(generateMarkdown.renderLicenseBadge(answers.license))
+        // console.log(generateMarkdown.renderLicenseBadge)
+        //console.log(generateMarkdown.renderLicenseBadge(answers.license))
         // const badges = generateMarkdown.renderLicenseBadge(answers.license)
+        console.log(tOc)
         console.log(badges)
+        console.log(generateMarkdown.generateMarkdown.spaces)
         //generateMarkdown.chooseColor(answers.license)
 
 
@@ -141,6 +167,7 @@ inquirer
         console.log(answers)
         console.log(`${answers.usage}`)
         console.log(badges)
+
 
 
     })
