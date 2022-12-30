@@ -3,7 +3,8 @@ const fs = require('fs')
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown');
 
-console.log(generateMarkdown)
+//console.log(generateMarkdown)
+//console.log(generateMarkdown.renderLicenseBadge)
 
 //* generate list items for table of contents
 //* see if you could do choices/options for tableofContents
@@ -11,18 +12,27 @@ console.log(generateMarkdown)
 //* destructured object 'answers' so I could just refer to each answer by name (e.g. tableOfContents, title, etc.)
 
 //* LICENSE: create a template
-const colors = ['lightblue', 'blue', 'orange']
+//const colors = ['lightblue', 'blue', 'orange']
 //const color = []
 
+
+
 // TODO: Create an array of questions for user input
-const generateREADME = (answers) = ({ tableOfContents, title, description, installation, usage, license, contributing, tests, questions }) =>
+const generateREADME = (answers) = ({ tableOfContents, title, description, installation, usage, license, badges, contributing, tests, questions }) =>
     `
     ## Table of Contents: ${tableOfContents}
+
     # Title: ${title}
+
     ## Description: ${description}
+
     ## Installation: ${installation}
+
     ## Usage: ${usage}
-    ## License: ${license}`
+
+    ## License: ${license}
+    
+    ## Badge: ${badges}`
 
 
 //* inquirer.prompt takea an array of objects where each object is a question
@@ -99,7 +109,9 @@ inquirer
 
     //* answers will have a name property equal to whatever the user inputs
     .then((answers) => {
-        const contentREADME = generateREADME(answers);
+        const badges = generateMarkdown.renderLicenseBadge(answers.license)
+        let contentREADME = generateREADME(answers);
+        contentREADME += badges;
         //console.log(answers.color)
 
         // if (answers.license == 'Apache_2.0') {
@@ -115,6 +127,9 @@ inquirer
         // generateMarkdown.renderLicenseBadge(answers.license)
         generateMarkdown.renderLicenseBadge(answers.license)
         console.log(generateMarkdown.renderLicenseBadge)
+        console.log(generateMarkdown.renderLicenseBadge(answers.license))
+        // const badges = generateMarkdown.renderLicenseBadge(answers.license)
+        console.log(badges)
         //generateMarkdown.chooseColor(answers.license)
 
 
@@ -125,6 +140,7 @@ inquirer
             err ? console.log(err) : console.log('Successfully created README.md file!')) //title text = underined
         console.log(answers)
         console.log(`${answers.usage}`)
+        console.log(badges)
 
 
     })

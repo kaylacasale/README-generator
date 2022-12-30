@@ -65,18 +65,18 @@ function renderLicenseSection(license) { }
 function generateMarkdown(answers) {
   // data = inquirer.prompt(answers)
   // data = `${process.argv[2]}`
-  const { tableOfContents, title, description, installation, usage } = answers
+  // const { tableOfContents, title, description, installation, usage } = answers
 
-  console.log(installation)
+  //console.log(installation)
 
 
-  console.log(answers)
+  //console.log(answers)
 
   // return `# ${data.title}, ${data.description}, ${data.installation}
-  return `answers
+  //return `answers
 
 
-    `;
+  // `;
 }
 
 module.exports = {
