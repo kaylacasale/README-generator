@@ -1,7 +1,6 @@
 // TODO: Include packages needed for this application
 const fs = require('fs')
 const inquirer = require('inquirer');
-
 const generateMarkdown = require('./utils/generateMarkdown');
 
 console.log(generateMarkdown)
@@ -12,6 +11,9 @@ console.log(generateMarkdown)
 //* destructured object 'answers' so I could just refer to each answer by name (e.g. tableOfContents, title, etc.)
 
 //* LICENSE: create a template
+const colors = ['lightblue', 'blue', 'orange']
+//const color = []
+
 // TODO: Create an array of questions for user input
 const generateREADME = (answers) = ({ tableOfContents, title, description, installation, usage, license, contributing, tests, questions }) =>
     `
@@ -70,19 +72,50 @@ inquirer
         {
             type: 'list',
             message: 'Choose a license for your application.',
-            choices: ['Apache_2.0', 'Boost_1.0', 'BSD_3--Clause', 'BSD_2--Clause'],
+            choices: ['Apache_2.0', 'Boost_1.0', 'BSD_3--Clause', 'BSD_2--Clause', 'EPL_1.0', 'GPLv3'],
             name: 'license',
+            // color: function (answers) {
+            //     // const colors = ['blue', 'lightblue', 'orange']
+            //     console.log(colors)
+            //     console.log(answers.license[colors])
+            //     if (answers.license == 'Apache_2.0') {
+            //         //color = colors[0]
+            //         //  console.log(color)
+            //         return colors[0]
+            //     } else if (answers.license == 'Boost_1.0') {
+            //         // color = colors[1]
+            //         return colors[1]
+            //     } else if (answers.license == 'BSD_3--Clause') {
+            //         //color = colors[2]
+            //         return colors[2]
+            //     }
+
+            // }
         },
 
 
 
     ])
+
     //* answers will have a name property equal to whatever the user inputs
     .then((answers) => {
         const contentREADME = generateREADME(answers);
+        //console.log(answers.color)
+
+        // if (answers.license == 'Apache_2.0') {
+        //     console.log(colors[0])
+        // }
+
+
+
+
+
+
+
         // generateMarkdown.renderLicenseBadge(answers.license)
         generateMarkdown.renderLicenseBadge(answers.license)
         console.log(generateMarkdown.renderLicenseBadge)
+        //generateMarkdown.chooseColor(answers.license)
 
 
 
@@ -92,6 +125,8 @@ inquirer
             err ? console.log(err) : console.log('Successfully created README.md file!')) //title text = underined
         console.log(answers)
         console.log(`${answers.usage}`)
+
+
     })
 
 
