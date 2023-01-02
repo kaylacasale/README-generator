@@ -9,7 +9,7 @@
 
     ## Usage: j
 
-    ## License: Apache_2.0
+    ## License: GPLv3
     
     ## Badge: undefined###j
  * [Table of Contents](#Table of Contents),
@@ -22,5 +22,6 @@
  * [Tests](#Tests),
  * [Questions](#Questions)
         
-##License
-    [![License](https://img.shields.io/badge/Apache_2.0-blue.svg)]
+ License
+    [![License: undefined](https://img.shields.io/badge/License-GPLv3-blue.svg)]
+    [![License: undefined](https://img.shields.io/badge/License-GPLv3-undefined.svg)]

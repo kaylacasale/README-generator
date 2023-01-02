@@ -65,24 +65,44 @@ function renderLicenseBadge(license) {
     console.log(badge)
     return badge
   } else if (license == 'GPLv3') {
-    const licenseShort = 'GPL v2'
+    let licenseShort = 'GPL v3'
     const color = colors[0]
-    const badge = `
-    [![License: ${licenseShort}](https://img.shields.io/badge/License-${license}-${color}.svg)]`
-    console.log(badge)
-    return badge
-    // return `
-    // ## Licence
-
-    // *Badges are often meaningful and productive - and boost the readability of your readme files. 😎 *
-
-    // \n * + ${badge}`
+    seeLicense(licenseShort, color)
+    //return licenseShort
+  } else if (license == 'GPL_v2') {
+    let licenseShort = 'GPL v2'
+    // return licenseShort
   }
+  //console.log(this.licenseShort)
+  const color = colors[0]
+  const badge = `
+    [![License: ${this.licenseShort}](https://img.shields.io/badge/License-${license}-${color}.svg)]`
+  console.log(badge)
+  return badge
+  // return `
+  // ## Licence
+
+  // *Badges are often meaningful and productive - and boost the readability of your readme files. 😎 *
+
+  // \n * + ${badge}`
+}
+
+function seeLicense(license, licenseShort, color) {
+  console.log(licenseShort)
+
+  const badge = `
+    [![License: ${licenseShort}](https://img.shields.io/badge/License-${license}-${color}.svg)]`
+  console.log(badge)
+  return badge
 
 
 }
 
+
+
 const colors = ['blue', 'lightblue', 'orange', 'red']
+
+
 // function chooseColor(license) {
 //   // console.log(license)
 //   if (license == 'Apache_2.0') {
@@ -127,7 +147,9 @@ module.exports = {
   generateMarkdown,
   renderLicenseBadge,
   renderTableOfContents,
-  renderTitle
+  renderTitle,
+  seeLicense
+
 
 }
 

@@ -82,7 +82,7 @@ inquirer
         {
             type: 'list',
             message: 'Choose a license for your application.',
-            choices: ['Apache_2.0', 'Boost_1.0', 'BSD_3--Clause', 'BSD_2--Clause', 'EPL_1.0', 'GPLv3'],
+            choices: ['Apache_2.0', 'Boost_1.0', 'BSD_3--Clause', 'BSD_2--Clause', 'EPL_1.0', 'GPLv3', 'GPL_v2'],
             name: 'license',
             // color: function (answers) {
             //     // const colors = ['blue', 'lightblue', 'orange']
@@ -108,6 +108,7 @@ inquirer
     ])
 
     //* answers will have a name property equal to whatever the user inputs
+
     .then((answers) => {
         console.log(answers.sections)
         //const contents = answers.sections
@@ -115,21 +116,30 @@ inquirer
         const tOc = generateMarkdown.renderTableOfContents(answers.sections)
 
         const badges = generateMarkdown.renderLicenseBadge(answers.license)
+
+        const seeBadge = generateMarkdown.seeLicense(answers.license)
+
         let contentREADME = generateREADME(answers);
 
         const title = generateMarkdown.renderTitle(answers.title)
+        let badgeText = generateMarkdown.renderBadge
+        console.log(badgeText)
         // if (answers.title !== '') {
         //     contentREADME += `
 
         //     ## ${answers.title}`
         // }
-
+        //* need to figure out how to correctly put ##Licrnse title with associated badge icon
         contentREADME += `#` + title;
         contentREADME += tOc;
         // contentREADME += '\n' + badges;
         // contentREADME += `\n## License` + badges
         contentREADME += `
-        \n` + '##License' + badges
+        \n License` + badges
+        contentREADME += seeBadge;
+
+        //contentREADME += `##License`
+
         // contentREADME += `
 
         // ## Badge
@@ -150,6 +160,7 @@ inquirer
 
         // generateMarkdown.renderLicenseBadge(answers.license)
         generateMarkdown.renderLicenseBadge(answers.license)
+        generateMarkdown.seeLicense(answers.license)
         // console.log(generateMarkdown.renderLicenseBadge)
         //console.log(generateMarkdown.renderLicenseBadge(answers.license))
         // const badges = generateMarkdown.renderLicenseBadge(answers.license)
