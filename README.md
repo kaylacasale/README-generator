@@ -9,7 +9,7 @@
 
     ## Usage: j
 
-    ## License: GPL_v2
+    ## License: Apache_2.0
     
     ## Badge: undefined
   # j
@@ -27,9 +27,7 @@
 
         
  License
-    [![License: undefined](https://img.shields.io/badge/License-GPL_v2-orange.svg)]
-
-    *Badges are often meaningful and productive - and boost the readability of your README files. 😎 *
+        [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+ 
+        *Badges are often meaningful and productive - and boost the readability of your README files. 😎 * 
         
- License
-        [![License: GPL v2](https://img.shields.io/badge/License-GPL_v2-blue.svg)](https://www.gnu.org/licenses/undefined)

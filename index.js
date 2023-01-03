@@ -161,9 +161,10 @@ inquirer
         //     seeBadge;
         contentREADME += '\n' + `## License` + '\n';
 
-        contentREADME += `
-        \n License` +
-            seeBadge;
+        // contentREADME += `
+        // \n License` +
+        //     seeBadge;
+        //* if then statement to decide which link accepts values and adds to README content 
         if (answers.license == 'Apache_2.0' || answers.license == 'BSD_3--Clause' || answers.license == 'BSD_2--Clause' || answers.license == 'EPL_1.0') {
             contentREADME += `
         \n License` +
@@ -174,6 +175,10 @@ inquirer
                 badge2;
 
         }
+
+        contentREADME += `\n 
+        *Badges are often meaningful and productive - and boost the readability of your README files. 😎 * 
+        \n`;
 
         // contentREADME += '\n' +
         //     seeBadge;

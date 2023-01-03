@@ -133,6 +133,9 @@ function renderLicenseBadge2(license) {
     //const licenseShort = 'GPL v3'
     const licenseShort2 = 'gpl-3.0'
     return licenseShort2
+  } else if (license == 'GPL_v2') {
+    const licenseShort2 = 'old-licenses/gpl-2.0.en.html'
+    return licenseShort2
   }
 }
 
