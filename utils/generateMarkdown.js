@@ -99,7 +99,7 @@ function seeLicense(license, licenseShort, color) {
   return badge +
     `
 
-    *Badges are often meaningful and productive - and boost the readability of your readme files. 😎 *`
+    *Badges are often meaningful and productive - and boost the readability of your README files. 😎 *`
 
 
 }
@@ -111,6 +111,9 @@ const colors = ['blue', 'lightblue', 'orange', 'red']
 //* function to render title, but can just pass from index.js function to .then promise (i think?) since not manipulating title
 function seeTitle(markTitle) {
   console.log(markTitle)
+  return `
+  ## ` + markTitle
+
 
 
 }

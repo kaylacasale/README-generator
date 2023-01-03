@@ -111,7 +111,7 @@ inquirer
 
     .then((answers) => {
         console.log(answers.sections)
-        console.log(answers.title)
+        // console.log(answers.title)
         //const contents = answers.sections
         //generateMarkdown.renderTableOfContents(contents)
         const tOc = generateMarkdown.renderTableOfContents(answers.sections)
@@ -123,6 +123,9 @@ inquirer
         let contentREADME = generateREADME(answers);
 
         const title = generateMarkdown.renderTitle(answers.title)
+
+        const markTitle2 = generateMarkdown.seeTitle(answers.title)
+
         let badgeText = generateMarkdown.renderBadge
         console.log(badgeText)
         // if (answers.title !== '') {
@@ -131,7 +134,8 @@ inquirer
         //     ## ${answers.title}`
         // }
         //* need to figure out how to correctly put ##Licrnse title with associated badge icon
-        contentREADME += `#` + title;
+        contentREADME += markTitle2;
+        // contentREADME += `#` + title;
         contentREADME += tOc;
         // contentREADME += '\n' + badges;
         // contentREADME += `\n## License` + badges
@@ -140,7 +144,7 @@ inquirer
         contentREADME += `
         \n License` +
             seeBadge;
-
+        // contentREADME += markTitle2;
         //contentREADME += `##License`
 
         // contentREADME += `
@@ -164,6 +168,8 @@ inquirer
         // generateMarkdown.renderLicenseBadge(answers.license)
         generateMarkdown.renderLicenseBadge(answers.license)
         generateMarkdown.seeLicense(answers.license)
+
+        //* pass title input to seeTitle function in generateMarkdown.js
         generateMarkdown.seeTitle(answers.title)
         // console.log(generateMarkdown.renderLicenseBadge)
         //console.log(generateMarkdown.renderLicenseBadge(answers.license))
