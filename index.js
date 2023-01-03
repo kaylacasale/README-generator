@@ -96,6 +96,11 @@ inquirer
             type: 'input',
             message: 'Please describe any test instructions that apply to your project.',
             name: 'tests',
+        },
+        {
+            type: 'input',
+            message: 'Please enter your GitHub username.',
+            name: 'gitHub',
         }
 
 
@@ -113,11 +118,11 @@ inquirer
 
         const badges = generateMarkdown.renderLicenseBadge(answers.license)
 
-        const seeBadge = generateMarkdown.seeLicense(answers.license)
+        // const seeBadge = generateMarkdown.seeLicense(answers.license)
 
         let contentREADME = generateREADME(answers);
 
-        const title = generateMarkdown.renderTitle(answers.title)
+        // const title = generateMarkdown.renderTitle(answers.title)
 
         const markTitle2 = generateMarkdown.seeTitle(answers.title)
 
@@ -252,6 +257,8 @@ inquirer
         console.log(badges)
         console.log(generateMarkdown.generateMarkdown.spaces)
         //generateMarkdown.chooseColor(answers.license)
+        //* pass gitHub user input into function for fetching git API
+        getGitAPI(answers.gitHub)
 
 
 
@@ -268,7 +275,39 @@ inquirer
     })
 
 
+function getGitAPI(answers) {
+    var requestAPI = `https://api.github.com/users/${answers}`
+    let gitHubContent = ``
+    // let gitHubContent = (data) = ({ gitHubURL }) => `
+    // GitHub URL: ${gitHubURL}`
 
+    fetch(requestAPI)
+        .then(function (response) {
+            return response.json()
+        })
+        .then(function (data) {
+            console.log(data)
+            console.log(data.html_url)
+
+            gitHubContent += '\n' + `## Questions
+            ` +
+                '\n';
+
+            const gitHubURL = data.html_url
+            gitHubContent += 'GitHub URL: ' + gitHubURL
+
+            // let gitHubContent = (data) = ({ gitHubURL }) => `
+            // GitHub URL: ${gitHubURL}`
+            console.log(gitHubContent)
+
+
+            fs.appendFile('README.md', gitHubContent, (err) =>
+                err ? console.log(err) : console.log('Successfully authorized and added GitHub info!'))
+
+        })
+
+
+}
 // const writeFileAsync = generateMarkdown(writeToFile)
 //console.log(`${process.argv[1]}`)
 // .then((data) => {
