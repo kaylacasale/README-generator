@@ -198,6 +198,7 @@ inquirer
         contentREADME += '\n' + `## Description
         ` +
             '\n';
+        // contentREADME += '[Go to Description Section](#Description)'
         contentREADME += answers.description;
 
 

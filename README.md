@@ -1,39 +1,38 @@
 
-  # j
+  # tit
 ## Table of Contents
 
- * [Title](#Title),
- * [Description](#Description),
- * [Installation](#Installation),
- * [Usage](#Usage),
- * [Licence](#Licence),
- * [Contributing](#Contributing),
- * [Tests](#Tests),
- * [Questions](#Questions)
+ * [Description](#description),
+ * [Installation](#installation),
+ * [Usage](#usage),
+ * [Licence](#licence),
+ * [Contributing](#contributing),
+ * [Tests](#tests),
+ * [Questions](#questions)
 ## License
 
         
  License
-        [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+        [![License](https://img.shields.io/badge/License-BSD_3--Clause-orange.svg)](https://opensource.org/licenses/BSD-3-Clause)
  
         *Badges are often meaningful and productive - and boost the readability of your README files. 😎 * 
         
 
 ## Description
         
-j
+des
 ## Installation
         
-j
+inst
 ## Usage
         
-j
+use
 ## Contributing
         
-j
+con
 ## Tests
         
-j
+tes
 ## Questions
             
 GitHub URL: https://github.com/kaylacasale

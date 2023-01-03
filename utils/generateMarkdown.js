@@ -1,20 +1,22 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 //* map function to loop through each element in sections array for table of contents so sections are separate by line and not only by comma (along with other adjustments to each element)
-//* starts at index=1 to skip display of table of contents as clickable value
+//* starts at index=2 to skip display of table of contents and title as clickable values
 var map = (arr, cb) => {
   //let contents;
   var result = [];
-  for (var index = 1; index < arr.length; index++) {
+  for (var index = 2; index < arr.length; index++) {
     var currentElement = arr[index];
     result.push(cb(currentElement, index));
   }
   //console.log(result)
   return result
 }
+//* added convert to lower case function to anchor link content in order to format anchor correctly and allow clickable link that directs to appropriate section (with associated #Link name)
 function renderTableOfContents(sections) {
   //console.log(sections)
   var spaces = map(sections, (elements) => {
-    return '\n * ' + `[${elements}](#${elements})`
+    let lowerCase = elements.toLowerCase();
+    return '\n * ' + `[${elements}](#${lowerCase})`
   })
   console.log(spaces)
   return spaces
