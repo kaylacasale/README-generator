@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/kaylacasale/README-generator#readme",
   "dependencies": {
+    "@octokit/core": "^4.1.0",
     "inquirer": "^8.2.4"
   }
 }

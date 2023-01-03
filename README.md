@@ -1,5 +1,5 @@
 
-  # tit
+  # title
 ## Table of Contents
 
  * [Description](#description),
@@ -23,18 +23,21 @@
 des
 ## Installation
         
-inst
+install
 ## Usage
         
-use
+direct
 ## Contributing
         
-con
+guid
 ## Tests
         
-tes
+apply
 ## Questions
             
-GitHub URL: https://github.com/kaylacasale
+**GitHub URL:** https://github.com/kaylacasale
 
-Email: kayla.casale@gmail.com
+**Email:** kayla.casale@gmail.com
+
+**My Avatar:**
+![Screenshot](https://avatars.githubusercontent.com/u/115776118?v=4)

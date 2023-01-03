@@ -1,6 +1,6 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 //* map function to loop through each element in sections array for table of contents so sections are separate by line and not only by comma (along with other adjustments to each element)
-//* starts at index=2 to skip display of table of contents and title as clickable values
+//* starts at index=2 to skip display of table of contents and title as clickable values/anchors
 var map = (arr, cb) => {
   //let contents;
   var result = [];
@@ -49,6 +49,18 @@ function findColor(license) {
   }
 
 }
+
+// //* installed Octokit/core from URL (https://github.com/octokit/core.js#readme) by  entering 'npm install @octokit/core' in the command-line
+
+// function renderLicenceInfo (license) {
+//   // Octokit.js
+// // https://github.com/octokit/core.js#readme
+// const octokit = new Octokit({
+//   auth: 'YOUR-TOKEN'
+// })
+
+// await octokit.request('GET /licenses{?featured,per_page,page}', {})
+// }
 
 // const color = ['lightblue', 'blue', 'orange']
 // If there is no license, return an empty string

@@ -39,6 +39,17 @@ const generateREADME = (answers) = ({ title, description, installation, usage, l
 
 //* inquirer.prompt takea an array of objects where each object is a question
 inquirer
+    // .confirm([
+    //     {
+    //         type: 'confirm',
+    //         message: ' 🙋‍♀️ I think of a README like a recipe for a dish you are making at home. 🥞🔖 🍝🔖🔖. ' +
+    //             'Good recipes allow you to gauge what ingredients you need, how much time you should spent, and give access to other sources or content with more information if desired.' +
+
+    //             'And I believe the urgency that the universally given default name for JavaScript users -  README - elicits shows why these files should be quick and engaging!'
+
+    //     },
+
+    // ])
     .prompt([
         // {
         //     type: 'input',
@@ -50,6 +61,18 @@ inquirer
         //         { title: 'User Story', value: '#0000ff' }
         //     ]
         // }
+        {
+            type: 'checkbox',
+            message: ' 🙋‍♀️ I think of a README like a recipe for a dish you are making at home. \n 🥞🔖 🍝🔖🔖. ' +
+                'Good recipes allow you to gauge what ingredients you need, how much time you should spent, and give access to other sources or content with more information if desired.' +
+
+                '\n And I believe the urgency that the universally given default name for JavaScript users -  README - elicits shows why these files should be quick and engaging!' +
+
+                '\n Do you think you understand why READMEs are important?',
+            name: 'about',
+            choices: ['yes', 'no']
+
+        },
         {
             type: 'checkbox',
             message: 'What sections would you like to include in your README file?',
@@ -89,7 +112,7 @@ inquirer
         },
         {
             type: 'input',
-            mesage: 'Please provide contribution guidelines if application',
+            message: 'Please provide contribution guidelines if application',
             name: 'contributing',
         },
         {
@@ -156,6 +179,13 @@ inquirer
 
         //     ## ${answers.title}`
         // }
+
+        // contentREADME += `** 🙋‍♀️ I think of a README like a recipe for a dish you are making at home. 🥞🔖 🍝🔖🔖
+
+        // Good recipes allow you to gauge what ingredients you need, how much time you should spent, and give access to other sources or content with more information if desired.
+
+        // And I believe the urgency that the universally given default name for JavaScript users -  "README" - elicits shows why these files should be quick and engaging!`
+
         //* need to figure out how to correctly put ##Licrnse title with associated badge icon
         contentREADME += markTitle2;
 
@@ -242,8 +272,8 @@ inquirer
         // }
 
 
-
-
+        //* call Octokat function to pass value
+        // getLicenseAPI(answers.license)
 
         generateMarkdown.renderTableOfContents(answers.sections);
         generateMarkdown.findColor(answers.license);
@@ -264,9 +294,10 @@ inquirer
         console.log(generateMarkdown.generateMarkdown.spaces)
         //generateMarkdown.chooseColor(answers.license)
         //* pass gitHub user input into function for fetching git API
+        //* pass email user input into API fetch function to display value under Questions section
         getGitAPI(answers.gitHub, answers.email)
 
-        //* pass email user input into API fetch function to display value under Questions section
+
         // contentREADME += '\n'
         // contentREADME += answers.email
 
@@ -284,7 +315,8 @@ inquirer
 
     })
 
-//* fetch GitHub user info using 'answer.gitHub' input passed from promise above and use to display GitHub info under Questions section in README file
+
+//* fetch GitHub user info using 'answer.gitHub' and 'answer.email' input passed from promise above and use to display GitHub info under Questions section in README file
 
 function getGitAPI(gitHub, email) {
     var requestAPI = `https://api.github.com/users/${gitHub}`
@@ -300,16 +332,29 @@ function getGitAPI(gitHub, email) {
             console.log(data)
             console.log(data.html_url)
 
+            console.log(data.avatar_url)
+
             gitHubContent += '\n' + `## Questions
             ` +
                 '\n';
 
             const gitHubURL = data.html_url
-            gitHubContent += 'GitHub URL: ' + gitHubURL
+            gitHubContent += '**GitHub URL:** ' + gitHubURL
 
             gitHubContent += '\n' +
                 '\n';
-            gitHubContent += 'Email: ' + email
+            gitHubContent += '**Email:** ' + email
+            const id = data.id
+
+            //* finally figured out how to incorporate the avatar into the README file :)
+            //* as of this year, you can fetch from the index.js file
+            const gitHubAvatar = `![Screenshot](${data.avatar_url})`
+            console.log(gitHubAvatar)
+            gitHubContent += '\n' +
+                '\n'
+            gitHubContent += '**My Avatar:**' + '\n'
+            gitHubContent += gitHubAvatar
+
 
             // let gitHubContent = (data) = ({ gitHubURL }) => `
             // GitHub URL: ${gitHubURL}`
@@ -333,7 +378,24 @@ function getGitAPI(gitHub, email) {
 //     })
 // })
 // )
+//* installed Octokit/core from URL (https://github.com/octokit/core.js#readme) by  entering 'npm install @octokit/core' in the command-line
 
+// function getLicenseAPI(license) {
+//     var requestAPI = ``
+
+//     fetch(requestAPI)
+//         .then(function (response) {
+//             return response.json()
+//         })
+//         .then(function (data) {
+//             console.log(data)
+//         })
+// }
+// Octokit.js
+// https://github.com/octokit/core.js#readme
+// const octokit = new Octokit({
+//     auth: 'YOUR-TOKEN'
+// })
 
 // fs.generateMarkdown(writeFileAsync, (err) =>
 //     err ? console.log(err) : console.log(fileName))
