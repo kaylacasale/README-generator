@@ -140,6 +140,12 @@ inquirer
         let badge2 = `
         [![License: ${badgeText}](https://img.shields.io/badge/License-${answers.license}-${color}.svg)](https://www.gnu.org/licenses/${badgeText2})`
         console.log(badge2)
+
+        let badgeText3 = generateMarkdown.renderLicenseBadge3(answers.license)
+        console.log(badgeText3)
+        let badge3 = `
+        [![License](https://img.shields.io/badge/License-${answers.license}-${color}.svg)](${badgeText3})`
+        console.log(badge3)
         // if (answers.title !== '') {
         //     contentREADME += `
 
@@ -174,12 +180,18 @@ inquirer
         \n License` +
                 badge2;
 
+        } else if (answers.license == 'Boost_1.0') {
+            contentREADME += `
+            \n License` +
+                badge3;
         }
 
         contentREADME += `\n 
         *Badges are often meaningful and productive - and boost the readability of your README files. 😎 * 
         \n`;
 
+        contentREADME += '\n' + `## Description` + '\n';
+        contentREADME += answers.description
         // contentREADME += '\n' +
         //     seeBadge;
         // contentREADME += markTitle2;
@@ -208,6 +220,7 @@ inquirer
         generateMarkdown.renderLicenseBadge(answers.license)
         generateMarkdown.seeLicense(answers.license)
         generateMarkdown.renderLicenseBadge2(answers.license)
+        generateMarkdown.renderLicenseBadge3(answers.license)
 
         //* pass title input to seeTitle function in generateMarkdown.js
         generateMarkdown.seeTitle(answers.title)

@@ -128,6 +128,8 @@ function renderLicenseBadge(license) {
   // \n * + ${badge}`
 }
 
+
+
 function renderLicenseBadge2(license) {
   if (license == 'GPLv3') {
     //const licenseShort = 'GPL v3'
@@ -136,6 +138,13 @@ function renderLicenseBadge2(license) {
   } else if (license == 'GPL_v2') {
     const licenseShort2 = 'old-licenses/gpl-2.0.en.html'
     return licenseShort2
+  }
+}
+
+function renderLicenseBadge3(license) {
+  if (license == 'Boost_1.0') {
+    const licenseShort3 = 'https://www.boost.org/LICENSE_1_0.txt'
+    return licenseShort3
   }
 }
 
@@ -219,7 +228,8 @@ module.exports = {
   seeLicense,
   seeTitle,
   findColor,
-  renderLicenseBadge2
+  renderLicenseBadge2,
+  renderLicenseBadge3
 
 
 }
