@@ -12,7 +12,9 @@
     ## License: GPLv3
     
     ## Badge: undefined
-  ## README
+  # README
+## Table of Contents
+
  * [Title](#Title),
  * [Description](#Description),
  * [Installation](#Installation),

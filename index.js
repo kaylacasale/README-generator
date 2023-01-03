@@ -135,6 +135,9 @@ inquirer
         // }
         //* need to figure out how to correctly put ##Licrnse title with associated badge icon
         contentREADME += markTitle2;
+
+        //* to add Table of Contents label and spaces before and after
+        contentREADME += '\n' + `## Table of Contents` + '\n'
         // contentREADME += `#` + title;
         contentREADME += tOc;
         // contentREADME += '\n' + badges;

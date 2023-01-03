@@ -112,9 +112,7 @@ const colors = ['blue', 'lightblue', 'orange', 'red']
 function seeTitle(markTitle) {
   console.log(markTitle)
   return `
-  ## ` + markTitle
-
-
+  # ` + markTitle
 
 }
 // function chooseColor(license) {
