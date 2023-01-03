@@ -12,7 +12,6 @@
     ## License: GPLv3
     
     ## Badge: undefined###j
- * [Table of Contents](#Table of Contents),
  * [Title](#Title),
  * [Description](#Description),
  * [Installation](#Installation),
@@ -24,4 +23,8 @@
         
  License
     [![License: undefined](https://img.shields.io/badge/License-GPLv3-blue.svg)]
+        
+ License
     [![License: undefined](https://img.shields.io/badge/License-GPLv3-undefined.svg)]
+
+    *Badges are often meaningful and productive - and boost the readability of your readme files. 😎 *

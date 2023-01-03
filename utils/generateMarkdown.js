@@ -1,9 +1,10 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 //* map function to loop through each element in sections array for table of contents so sections are separate by line and not only by comma (along with other adjustments to each element)
+//* starts at index=1 to skip display of table of contents as clickable value
 var map = (arr, cb) => {
   //let contents;
   var result = [];
-  for (var index = 0; index < arr.length; index++) {
+  for (var index = 1; index < arr.length; index++) {
     var currentElement = arr[index];
     result.push(cb(currentElement, index));
   }
@@ -71,6 +72,8 @@ function renderLicenseBadge(license) {
     //return licenseShort
   } else if (license == 'GPL_v2') {
     let licenseShort = 'GPL v2'
+    const color = colors[0]
+    seeLicense(licenseShort, color)
     // return licenseShort
   }
   //console.log(this.licenseShort)
@@ -93,7 +96,10 @@ function seeLicense(license, licenseShort, color) {
   const badge = `
     [![License: ${licenseShort}](https://img.shields.io/badge/License-${license}-${color}.svg)]`
   console.log(badge)
-  return badge
+  return badge +
+    `
+
+    *Badges are often meaningful and productive - and boost the readability of your readme files. 😎 *`
 
 
 }
@@ -103,6 +109,10 @@ function seeLicense(license, licenseShort, color) {
 const colors = ['blue', 'lightblue', 'orange', 'red']
 
 
+function seeTitle(markTitle) {
+  console.log(markTitle)
+
+}
 // function chooseColor(license) {
 //   // console.log(license)
 //   if (license == 'Apache_2.0') {
@@ -148,7 +158,8 @@ module.exports = {
   renderLicenseBadge,
   renderTableOfContents,
   renderTitle,
-  seeLicense
+  seeLicense,
+  seeTitle
 
 
 }

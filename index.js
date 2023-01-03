@@ -136,7 +136,9 @@ inquirer
         // contentREADME += `\n## License` + badges
         contentREADME += `
         \n License` + badges
-        contentREADME += seeBadge;
+        contentREADME += `
+        \n License` +
+            seeBadge;
 
         //contentREADME += `##License`
 
@@ -161,6 +163,7 @@ inquirer
         // generateMarkdown.renderLicenseBadge(answers.license)
         generateMarkdown.renderLicenseBadge(answers.license)
         generateMarkdown.seeLicense(answers.license)
+        generateMarkdown.seeTitle(answers.title)
         // console.log(generateMarkdown.renderLicenseBadge)
         //console.log(generateMarkdown.renderLicenseBadge(answers.license))
         // const badges = generateMarkdown.renderLicenseBadge(answers.license)
