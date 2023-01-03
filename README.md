@@ -20,7 +20,7 @@
 
 ## Description
         
-des
+describe
 ## Installation
         
 install
@@ -29,15 +29,15 @@ install
 direct
 ## Contributing
         
-guid
+guide
 ## Tests
         
-apply
+test
 ## Questions
             
 **GitHub URL:** https://github.com/kaylacasale
 
-**Email:** kayla.casale@gmail.com
+**Email:** kayla.casale@gmail.xom
 
 **My Avatar:**
 ![Screenshot](https://avatars.githubusercontent.com/u/115776118?v=4)

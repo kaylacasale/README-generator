@@ -280,7 +280,7 @@ inquirer
 
         // generateMarkdown.renderLicenseBadge(answers.license)
         generateMarkdown.renderLicenseBadge(answers.license)
-        generateMarkdown.seeLicense(answers.license)
+        //generateMarkdown.seeLicense(answers.license)
         generateMarkdown.renderLicenseBadge2(answers.license)
         generateMarkdown.renderLicenseBadge3(answers.license)
 
@@ -344,7 +344,7 @@ function getGitAPI(gitHub, email) {
             gitHubContent += '\n' +
                 '\n';
             gitHubContent += '**Email:** ' + email
-            const id = data.id
+            //const id = data.id
 
             //* finally figured out how to incorporate the avatar into the README file :)
             //* as of this year, you can fetch from the index.js file

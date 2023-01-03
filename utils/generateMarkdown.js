@@ -126,7 +126,7 @@ function renderLicenseBadge(license) {
     return licenseShort
   }
   //console.log(licenseShort)
-  seeLicense(licenseShort)
+  //seeLicense(licenseShort)
   // let color = 'blue'
   // //console.log(this.licenseShort)
   // // const color = colors[0]
@@ -162,26 +162,26 @@ function renderLicenseBadge3(license) {
   }
 }
 
-function seeLicense(license, licenseShort) {
-  console.log(licenseShort)
-  if (license == 'Apache_2.0') {
-    let color = 'blue'
-    const badge = `
-    [![License](https://img.shields.io/badge/License-${license}-${color}.svg)](https://opensource.org/licenses/${licenseShort})`
-    return badge
-  } else {
-    let color = 'orange'
-    const badge = `
-    [![License: ${licenseShort}](https://img.shields.io/badge/License-${license}-${color}.svg)]`
-    console.log(badge)
-    return badge +
-      `
+// function seeLicense(license, licenseShort) {
+//   console.log(licenseShort)
+//   if (license == 'Apache_2.0') {
+//     let color = 'blue'
+//     const badge = `
+//     [![License](https://img.shields.io/badge/License-${license}-${color}.svg)](https://opensource.org/licenses/${licenseShort})`
+//     return badge
+//   } else {
+//     let color = 'orange'
+//     const badge = `
+//     [![License: ${licenseShort}](https://img.shields.io/badge/License-${license}-${color}.svg)]`
+//     console.log(badge)
+//     return badge +
+//       `
 
-    *Badges are often meaningful and productive - and boost the readability of your README files. 😎 *`
-  }
+//     *Badges are often meaningful and productive - and boost the readability of your README files. 😎 *`
+//   }
 
 
-}
+// }
 
 
 
@@ -239,7 +239,6 @@ module.exports = {
   renderLicenseBadge,
   renderTableOfContents,
   renderTitle,
-  seeLicense,
   seeTitle,
   findColor,
   renderLicenseBadge2,
