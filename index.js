@@ -126,8 +126,20 @@ inquirer
 
         const markTitle2 = generateMarkdown.seeTitle(answers.title)
 
-        let badgeText = generateMarkdown.renderBadge
+        let badgeText = generateMarkdown.renderLicenseBadge(answers.license)
         console.log(badgeText)
+        let color = generateMarkdown.findColor(answers.license)
+
+
+        let badge = `
+        [![License](https://img.shields.io/badge/License-${answers.license}-${color}.svg)](https://opensource.org/licenses/${badgeText})`
+        console.log(badge)
+
+        let badgeText2 = generateMarkdown.renderLicenseBadge2(answers.license)
+        console.log(badgeText2, 'hey')
+        let badge2 = `
+        [![License: ${badgeText}](https://img.shields.io/badge/License-${answers.license}-${color}.svg)](https://www.gnu.org/licenses/${badgeText2})`
+        console.log(badge2)
         // if (answers.title !== '') {
         //     contentREADME += `
 
@@ -142,11 +154,29 @@ inquirer
         contentREADME += tOc;
         // contentREADME += '\n' + badges;
         // contentREADME += `\n## License` + badges
-        contentREADME += `
-        \n License` + badges
+        // contentREADME += `
+        // \n License` + badges
+        // contentREADME += `
+        // \n License` +
+        //     seeBadge;
+        contentREADME += '\n' + `## License` + '\n';
+
         contentREADME += `
         \n License` +
             seeBadge;
+        if (answers.license == 'Apache_2.0') {
+            contentREADME += `
+        \n License` +
+                badge;
+        } else if (answers.license == 'GPLv3') {
+            contentREADME += `
+        \n License` +
+                badge2;
+
+        }
+
+        // contentREADME += '\n' +
+        //     seeBadge;
         // contentREADME += markTitle2;
         //contentREADME += `##License`
 
@@ -167,10 +197,12 @@ inquirer
 
 
         generateMarkdown.renderTableOfContents(answers.sections);
+        generateMarkdown.findColor(answers.license);
 
         // generateMarkdown.renderLicenseBadge(answers.license)
         generateMarkdown.renderLicenseBadge(answers.license)
         generateMarkdown.seeLicense(answers.license)
+        generateMarkdown.renderLicenseBadge2(answers.license)
 
         //* pass title input to seeTitle function in generateMarkdown.js
         generateMarkdown.seeTitle(answers.title)

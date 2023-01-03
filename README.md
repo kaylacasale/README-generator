@@ -1,7 +1,7 @@
 
     ## Table of Contents: undefined
 
-    # Title: README
+    # Title: j
 
     ## Description: j
 
@@ -12,7 +12,7 @@
     ## License: GPLv3
     
     ## Badge: undefined
-  # README
+  # j
 ## Table of Contents
 
  * [Title](#Title),
@@ -23,11 +23,13 @@
  * [Contributing](#Contributing),
  * [Tests](#Tests),
  * [Questions](#Questions)
+## License
+
         
  License
-    [![License: undefined](https://img.shields.io/badge/License-GPLv3-blue.svg)]
-        
- License
-    [![License: undefined](https://img.shields.io/badge/License-GPLv3-undefined.svg)]
+    [![License: undefined](https://img.shields.io/badge/License-GPLv3-orange.svg)]
 
     *Badges are often meaningful and productive - and boost the readability of your README files. 😎 *
+        
+ License
+        [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
