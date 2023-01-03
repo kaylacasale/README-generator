@@ -1,17 +1,4 @@
 
-    ## Table of Contents: undefined
-
-    # Title: j
-
-    ## Description: j
-
-    ## Installation: j
-
-    ## Usage: j
-
-    ## License: Boost_1.0
-    
-    ## Badge: undefined
   # j
 ## Table of Contents
 
@@ -25,12 +12,25 @@
  * [Questions](#Questions)
 ## License
 
-            
+        
  License
-        [![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)
+        [![License](https://img.shields.io/badge/License-BSD_3--Clause-orange.svg)](https://opensource.org/licenses/BSD-3-Clause)
  
         *Badges are often meaningful and productive - and boost the readability of your README files. 😎 * 
         
 
 ## Description
+        
 j
+## Installation
+        
+j
+## Usage
+        
+j
+## Contributing
+        
+some
+## Tests
+        
+instr

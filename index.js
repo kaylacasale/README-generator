@@ -18,21 +18,23 @@ const generateMarkdown = require('./utils/generateMarkdown');
 
 
 // TODO: Create an array of questions for user input
-const generateREADME = (answers) = ({ tOc, title, description, installation, usage, license, badges, contributing, tests, questions }) =>
-    `
-    ## Table of Contents: ${tOc}
+const generateREADME = (answers) = ({ title, description, installation, usage, license, badges, contributing, tests, questions }) =>
+    ``
+// const generateREADME = (answers) = ({ tOc, title, description, installation, usage, license, badges, contributing, tests, questions }) =>
+//     `
+//     ## Table of Contents: ${tOc}
 
-    # Title: ${title}
+//     # Title: ${title}
 
-    ## Description: ${description}
+//     ## Description: ${description}
 
-    ## Installation: ${installation}
+//     ## Installation: ${installation}
 
-    ## Usage: ${usage}
+//     ## Usage: ${usage}
 
-    ## License: ${license}
-    
-    ## Badge: ${badges}`
+//     ## License: ${license}
+
+//     ## Badge: ${badges}`
 
 
 //* inquirer.prompt takea an array of objects where each object is a question
@@ -84,24 +86,17 @@ inquirer
             message: 'Choose a license for your application.',
             choices: ['Apache_2.0', 'Boost_1.0', 'BSD_3--Clause', 'BSD_2--Clause', 'EPL_1.0', 'GPLv3', 'GPL_v2'],
             name: 'license',
-            // color: function (answers) {
-            //     // const colors = ['blue', 'lightblue', 'orange']
-            //     console.log(colors)
-            //     console.log(answers.license[colors])
-            //     if (answers.license == 'Apache_2.0') {
-            //         //color = colors[0]
-            //         //  console.log(color)
-            //         return colors[0]
-            //     } else if (answers.license == 'Boost_1.0') {
-            //         // color = colors[1]
-            //         return colors[1]
-            //     } else if (answers.license == 'BSD_3--Clause') {
-            //         //color = colors[2]
-            //         return colors[2]
-            //     }
-
-            // }
         },
+        {
+            type: 'input',
+            mesage: 'Please provide contribution guidelines if application',
+            name: 'contributing',
+        },
+        {
+            type: 'input',
+            message: 'Please describe any test instructions that apply to your project.',
+            name: 'tests',
+        }
 
 
 
@@ -190,8 +185,34 @@ inquirer
         *Badges are often meaningful and productive - and boost the readability of your README files. 😎 * 
         \n`;
 
-        contentREADME += '\n' + `## Description` + '\n';
-        contentREADME += answers.description
+        contentREADME += '\n' + `## Description
+        ` +
+            '\n';
+        contentREADME += answers.description;
+
+
+        contentREADME += '\n' + `## Installation
+        ` +
+            '\n';
+        contentREADME += answers.installation;
+
+
+        contentREADME += '\n' + `## Usage
+        ` +
+            '\n';
+        contentREADME += answers.usage;
+
+
+        contentREADME += '\n' + `## Contributing
+        ` +
+            '\n';
+        contentREADME += answers.contributing;
+
+
+        contentREADME += '\n' + `## Tests
+        ` +
+            '\n';
+        contentREADME += answers.tests;
         // contentREADME += '\n' +
         //     seeBadge;
         // contentREADME += markTitle2;
