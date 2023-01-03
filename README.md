@@ -9,7 +9,7 @@
 
     ## Usage: j
 
-    ## License: GPLv3
+    ## License: GPL_v2
     
     ## Badge: undefined
   # j
@@ -27,9 +27,9 @@
 
         
  License
-    [![License: undefined](https://img.shields.io/badge/License-GPLv3-orange.svg)]
+    [![License: undefined](https://img.shields.io/badge/License-GPL_v2-orange.svg)]
 
     *Badges are often meaningful and productive - and boost the readability of your README files. 😎 *
         
  License
-        [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+        [![License: GPL v2](https://img.shields.io/badge/License-GPL_v2-blue.svg)](https://www.gnu.org/licenses/undefined)

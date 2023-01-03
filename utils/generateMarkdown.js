@@ -32,7 +32,7 @@ function renderTitle(title) {
 const colors = ['blue', 'lightblue', 'orange', 'red']
 
 function findColor(license) {
-  if (license == 'Apache_2.0' || license == 'GPLv3') {
+  if (license == 'Apache_2.0' || license == 'GPLv3' || license == 'GPL_v2') {
     let thisColor = colors[0]
     return thisColor
   } else if (license == 'Boost_1.0') {

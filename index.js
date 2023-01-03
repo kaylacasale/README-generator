@@ -164,11 +164,11 @@ inquirer
         contentREADME += `
         \n License` +
             seeBadge;
-        if (answers.license == 'Apache_2.0') {
+        if (answers.license == 'Apache_2.0' || answers.license == 'BSD_3--Clause' || answers.license == 'BSD_2--Clause' || answers.license == 'EPL_1.0') {
             contentREADME += `
         \n License` +
                 badge;
-        } else if (answers.license == 'GPLv3') {
+        } else if (answers.license == 'GPLv3' || answers.license == 'GPL_v2') {
             contentREADME += `
         \n License` +
                 badge2;
