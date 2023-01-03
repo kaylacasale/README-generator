@@ -1,5 +1,5 @@
 
-  # k
+  # j
 ## Table of Contents
 
  * [Title](#Title),
@@ -21,19 +21,21 @@
 
 ## Description
         
-k
+j
 ## Installation
         
-k
+j
 ## Usage
         
-k
+j
 ## Contributing
         
-k
+j
 ## Tests
         
-k
+j
 ## Questions
             
 GitHub URL: https://github.com/kaylacasale
+
+Email: kayla.casale@gmail.com

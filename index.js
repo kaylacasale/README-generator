@@ -101,7 +101,12 @@ inquirer
             type: 'input',
             message: 'Please enter your GitHub username.',
             name: 'gitHub',
-        }
+        },
+        {
+            type: 'input',
+            message: 'Please enter your desired email as contact information that will be displayed on your README file.',
+            name: 'email',
+        },
 
 
 
@@ -258,7 +263,11 @@ inquirer
         console.log(generateMarkdown.generateMarkdown.spaces)
         //generateMarkdown.chooseColor(answers.license)
         //* pass gitHub user input into function for fetching git API
-        getGitAPI(answers.gitHub)
+        getGitAPI(answers.gitHub, answers.email)
+
+        //* pass email user input into API fetch function to display value under Questions section
+        // contentREADME += '\n'
+        // contentREADME += answers.email
 
 
 
@@ -274,9 +283,10 @@ inquirer
 
     })
 
+//* fetch GitHub user info using 'answer.gitHub' input passed from promise above and use to display GitHub info under Questions section in README file
 
-function getGitAPI(answers) {
-    var requestAPI = `https://api.github.com/users/${answers}`
+function getGitAPI(gitHub, email) {
+    var requestAPI = `https://api.github.com/users/${gitHub}`
     let gitHubContent = ``
     // let gitHubContent = (data) = ({ gitHubURL }) => `
     // GitHub URL: ${gitHubURL}`
@@ -295,6 +305,10 @@ function getGitAPI(answers) {
 
             const gitHubURL = data.html_url
             gitHubContent += 'GitHub URL: ' + gitHubURL
+
+            gitHubContent += '\n' +
+                '\n';
+            gitHubContent += 'Email: ' + email
 
             // let gitHubContent = (data) = ({ gitHubURL }) => `
             // GitHub URL: ${gitHubURL}`
