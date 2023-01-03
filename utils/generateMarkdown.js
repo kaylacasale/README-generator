@@ -108,9 +108,10 @@ function seeLicense(license, licenseShort, color) {
 
 const colors = ['blue', 'lightblue', 'orange', 'red']
 
-
+//* function to render title, but can just pass from index.js function to .then promise (i think?) since not manipulating title
 function seeTitle(markTitle) {
   console.log(markTitle)
+
 
 }
 // function chooseColor(license) {

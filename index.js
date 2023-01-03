@@ -111,6 +111,7 @@ inquirer
 
     .then((answers) => {
         console.log(answers.sections)
+        console.log(answers.title)
         //const contents = answers.sections
         //generateMarkdown.renderTableOfContents(contents)
         const tOc = generateMarkdown.renderTableOfContents(answers.sections)
