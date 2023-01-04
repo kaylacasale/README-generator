@@ -1,10 +1,9 @@
 
-  # title
+  # README generator
 ## Table of Contents
 
  * [Description](#description),
  * [Installation](#installation),
- * [Usage](#usage),
  * [Licence](#licence),
  * [Contributing](#contributing),
  * [Tests](#tests),
@@ -20,24 +19,24 @@
 
 ## Description
         
-describe
+An application that generates your README file
 ## Installation
         
-install
+Using the command-line, users can answer simple questions that will be used to generate a personalized README file for any project
 ## Usage
         
-direct
+Using the command-line, users answer a series a prompts
 ## Contributing
         
-guide
+N/A
 ## Tests
         
-test
+Answer these questions as best you can to explain your project clearly and concisely
 ## Questions
             
 **GitHub URL:** https://github.com/kaylacasale
 
-**Email:** kayla.casale@gmail.xom
+**Email:** kayla.casale@gmail.com
 
 **My Avatar:**
 ![Screenshot](https://avatars.githubusercontent.com/u/115776118?v=4)

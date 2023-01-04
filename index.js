@@ -51,22 +51,12 @@ inquirer
 
     // ])
     .prompt([
-        // {
-        //     type: 'input',
-        //     message: 'What sections would you like to include in your README file?',
-        //     name: 'sections',
-        //     choices: [
-        //         { title: 'Title', value: '#ff0000' },
-        //         { title: 'Installation', value: '#00f00' },
-        //         { title: 'User Story', value: '#0000ff' }
-        //     ]
-        // }
         {
             type: 'checkbox',
             message: ' 🙋‍♀️ I think of a README like a recipe for a dish you are making at home. \n 🥞🔖 🍝🔖🔖. ' +
                 'Good recipes allow you to gauge what ingredients you need, how much time you should spent, and give access to other sources or content with more information if desired.' +
 
-                '\n And I believe the urgency that the universally given default name for JavaScript users -  README - elicits shows why these files should be quick and engaging!' +
+                '\n And I believe the urgency that the universally given default name for JavaScript users -  **README** - elicits shows why these files should be quick and engaging!' +
 
                 '\n Do you think you understand why READMEs are important?',
             name: 'about',
@@ -103,6 +93,14 @@ inquirer
             type: 'input',
             message: 'Describe how your application is used (e.g. directions).',
             name: 'usage',
+        },
+        {
+            type: 'input',
+            message: 'The following question will prompt you to choose a Markdown license. This list includes the most common open source and open data licenses.' + '\n' +
+                'Badges are emblems specific to README files that represent the license chosen, so users can see the selected license at first glance.' + '\n' +
+                'Badges are often meaningful and productive - and boost the readability of your README files. 😎 ' + '\n' +
+                'Press **Enter** to be directed to the following question where you will select an appropriate License for your project.',
+            name: 'licenseContext'
         },
         {
             type: 'list',
