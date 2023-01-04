@@ -242,7 +242,7 @@ inquirer
         contentREADME += answers.usage;
 
 
-        contentREADME += '\n' + `## Contributing
+        contentREADME += '\n' + `## Contributions
         ` +
             '\n';
         contentREADME += answers.contributing;
@@ -358,6 +358,17 @@ function getGitAPI(gitHub, email) {
             // GitHub URL: ${gitHubURL}`
             console.log(gitHubContent)
 
+            gitHubContent += '\n' +
+                '\n'
+
+            gitHubContent += '\n' + `## Tutorial` + '\n'
+
+            gitHubContent += ('https://drive.google.com/file/d/1Tf3gtrHdXYZnseZlDLZct2naHEC2kHUO/view')
+
+            gitHubContent += '\n' +
+                '\n'
+
+            // gitHubContent += `![alt text]('README-generator/Mockup.mp4')`
 
             fs.appendFile('README.md', gitHubContent, (err) =>
                 err ? console.log(err) : console.log('Successfully authorized and added GitHub info!'))
