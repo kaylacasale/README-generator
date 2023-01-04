@@ -219,9 +219,9 @@ inquirer
                 badge3;
         }
 
-        contentREADME += `\n 
-        *Badges are often meaningful and productive - and boost the readability of your README files. 😎 * 
-        \n`;
+        // contentREADME += `\n 
+        // *Badges are often meaningful and productive - and boost the readability of your README files. 😎 * 
+        // \n`;
 
         contentREADME += '\n' + `## Description
         ` +

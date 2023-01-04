@@ -1,37 +1,33 @@
 
-  # README generator
+  # README Generator
 ## Table of Contents
 
  * [Description](#description),
  * [Installation](#installation),
+ * [Usage](#usage),
  * [Licence](#licence),
  * [Contributing](#contributing),
- * [Tests](#tests),
  * [Questions](#questions)
 ## License
 
         
  License
         [![License](https://img.shields.io/badge/License-BSD_3--Clause-orange.svg)](https://opensource.org/licenses/BSD-3-Clause)
- 
-        *Badges are often meaningful and productive - and boost the readability of your README files. 😎 * 
-        
-
 ## Description
         
-An application that generates your README file
+An application that takes user input in order to generate a README file for your project.
 ## Installation
         
-Using the command-line, users can answer simple questions that will be used to generate a personalized README file for any project
+Before generating your README file, you will need to have VS Code, GitBash, and Nodejs installed locally. 
 ## Usage
         
-Using the command-line, users answer a series a prompts
+To initialize the project, you will copy the Code for this project in GitHub and clone the GitHub link locally. Then you will have to install Node Package Manager using 'npm init -y' and finally use the command-line to install the inquirer package by entering 'npm install inquirer'.
 ## Contributing
         
-N/A
+Guidelines here.
 ## Tests
         
-Answer these questions as best you can to explain your project clearly and concisely
+Test instructions here.
 ## Questions
             
 **GitHub URL:** https://github.com/kaylacasale
